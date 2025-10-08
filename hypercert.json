@@ -5,7 +5,7 @@
     "main": {
       "type": "record",
       "description": "A hypercert record tracking impact work.",
-      "key": "tid",
+      "key": "any",
       "record": {
         "type": "object",
         "required": ["impact_claim_id", "description", "work_scope", "work_timeframe_from", "work_timeframe_to"],
