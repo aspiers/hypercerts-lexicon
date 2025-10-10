@@ -8,7 +8,7 @@
       "key": "any",
       "record": {
         "type": "object",
-        "required": ["impact_claim_id", "description", "work_scope", "work_timeframe_from", "work_timeframe_to"],
+        "required": ["hypercertID", "descriptionURI", "workScope", "workTimeframeFrom", "workTimeFrameTo"],
         "properties": {
           "hypercertID": {
             "type": "string",
@@ -31,12 +31,12 @@
             "maxLength": 5000,
             "maxGraphemes": 1000
           },
-          "workStartTime": {
+          "workTimeframeFrom": {
             "type": "string",
             "format": "datetime",
             "description": "When the work began"
           },
-          "workEndTime": {
+          "workTimeFrameTo": {
             "type": "string",
             "format": "datetime",
             "description": "When the work ended"

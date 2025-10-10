@@ -8,14 +8,14 @@
       "key": "tid",
       "record": {
         "type": "object",
-        "required": ["subject", "evaluator_did", "summary"],
+        "required": ["subject", "evaluatorDID", "summary"],
         "properties": {
           "subject": {
             "type": "ref",
             "ref": "com.atproto.repo.strongRef",
             "description": "Reference to what is being evaluated (hypercert, measurement, etc.)"
           },
-          "evaluator_did": {
+          "evaluatorDID": {
             "type": "string",
             "format": "did",
             "description": "DID of the evaluator"
@@ -26,7 +26,7 @@
             "minimum": 0,
             "maximum": 10
           },
-          "evaluation_uri": {
+          "evaluationURI": {
             "type": "string",
             "format": "uri",
             "description": "URI to detailed evaluation report or methodology"
