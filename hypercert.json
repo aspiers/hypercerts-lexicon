@@ -72,6 +72,12 @@
                   "type": "string",
                   "maxLength": 256,
                   "description": "Optional title to describe the nature of the evidence"
+                },
+                "description": {
+                  "type": "string",
+                  "maxLength": 3000,
+                  "maxGraphemes": 300,
+                  "description": "Optional short description explaining what this evidence demonstrates or proves"
                 }
               }
             },
