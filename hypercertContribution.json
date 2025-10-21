@@ -27,19 +27,19 @@
           },
           "description": {
             "type": "string",
-            "description": "What the contributor concretely did",
+            "description": "What the contribution concretely achieved",
             "maxLength": 2000,
             "maxGraphemes": 500
           },
           "workTimeframeFrom": {
             "type": "string",
             "format": "datetime",
-            "description": "When this contributor started"
+            "description": "When this contribution started"
           },
           "workTimeframeTo": {
             "type": "string",
             "format": "datetime",
-            "description": "When this contributor finished"
+            "description": "When this contribution finished"
           },
           "createdAt": {
             "type": "string",
