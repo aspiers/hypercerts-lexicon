@@ -1,6 +1,6 @@
 {
   "lexicon": 1,
-  "id": "app.certified.hypercert.location",
+  "id": "org.hypercerts.claim.location",
   "defs": {
     "main": {
       "type": "record",
