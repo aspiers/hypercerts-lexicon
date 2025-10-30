@@ -80,11 +80,10 @@
           },
           "contributors": {
             "type": "array",
-            "description": "Contributors to this hypercert (names, pseudonyms, or DIDs)",
+            "description": "A strong reference to the contributions done to create the impact in the hypercerts. The record referenced must conform with the lexicon org.hypercerts.claim.contributions",
             "items": {
-              "type": "string",
-              "maxLength": 2560,
-              "maxGraphemes": 256
+              "type": "ref",
+              "ref": "com.atproto.repo.strongRef"
             }
           },
           "rights": {
