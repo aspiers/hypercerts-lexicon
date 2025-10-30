@@ -23,7 +23,6 @@
           },
           "description": {
             "type": "string",
-            "format": "uri",
             "description": "A description of the impact work done.",
             "maxLength": 30000,
             "maxGraphemes": 3000
