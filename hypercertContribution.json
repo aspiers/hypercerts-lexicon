@@ -8,7 +8,7 @@
       "key": "any",
       "record": {
         "type": "object",
-        "required": ["contributor", "role", "createdAt"],
+        "required": ["contributors", "role", "createdAt"],
         "properties": {
           "hypercert": {
             "type": "ref",
@@ -17,13 +17,16 @@
           },
           "role": {
             "type": "string",
-            "description": "Role or title of the contributor",
+            "description": "Role or title of the contributor(s).",
             "maxLength": 100
           },
-          "contributor": {
-            "type": "string",
-            "format": "did",
-            "description": "DID identifying the contributor"
+          "contributors": {
+            "type": "array",
+            "description": "List of DIDs identifying the contributors. If multiple are stored in the same hypercertContribution, then they would have the exact same role.",
+            "items": {
+              "type": "string",
+              "format": "did"
+            }
           },
           "description": {
             "type": "string",

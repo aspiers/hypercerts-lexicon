@@ -78,7 +78,7 @@
             },
             "maxLength": 100
           },
-          "contributors": {
+          "contributions": {
             "type": "array",
             "description": "A strong reference to the contributions done to create the impact in the hypercerts. The record referenced must conform with the lexicon org.hypercerts.claim.contributions",
             "items": {
