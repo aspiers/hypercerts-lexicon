@@ -94,9 +94,8 @@
             "description": "A strong reference to the rights that this hypercert has. The record referenced must conform with the lexicon org.hypercerts.claim.rights"
           },
           "location": {
-            "type": "string",
-            "format": "at-uri",
-            "description": "AT URI referencing a location record (app.certified.hypercert.location)"
+           "ref": "com.atproto.repo.strongRef",
+            "description": "A strong reference to the location where the work for done hypercert was located. The record referenced must conform with the lexicon org.hypercerts.claim.location"
           },
           "createdAt": {
             "type": "string",
