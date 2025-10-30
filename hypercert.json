@@ -90,9 +90,8 @@
             }
           },
           "rights": {
-            "type": "string",
-            "description": "Rights keyword (as defined in app.certified.hypercert.rights)",
-            "maxLength": 10
+            "ref": "com.atproto.repo.strongRef",
+            "description": "A strong reference to the rights that this hypercert has. The record referenced must conform with the lexicon org.hypercerts.claim.rights"
           },
           "location": {
             "type": "string",
