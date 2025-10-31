@@ -1,6 +1,6 @@
 {
   "lexicon": 1,
-  "id": "org.hypercerts.defs",
+  "id": "app.certified.defs",
   "defs": {
     "uri": {
       "type": "string",

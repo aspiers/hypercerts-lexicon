@@ -30,8 +30,8 @@
           "image": {
             "type": "union",
             "refs": [
-              "org.hypercerts.defs#uri",
-              "org.hypercerts.defs#smallBlob"
+              "app.certified.defs#uri",
+              "app.certified.defs#smallBlob"
             ],
             "description": "The hypercert visual representation as a URI or blob"
           },
