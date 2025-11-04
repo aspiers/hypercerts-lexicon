@@ -55,26 +55,8 @@
             "type": "array",
             "description": "Supporting evidence, documentation, or external data URIs",
             "items": {
-              "type": "object",
-              "required": ["uri"],
-              "properties": {
-                "uri": {
-                  "type": "string",
-                  "format": "uri",
-                  "description": "Evidence resource URI"
-                },
-                "title": {
-                  "type": "string",
-                  "maxLength": 256,
-                  "description": "Optional title to describe the nature of the evidence"
-                },
-                "description": {
-                  "type": "string",
-                  "maxLength": 3000,
-                  "maxGraphemes": 300,
-                  "description": "Optional short description explaining what this evidence demonstrates or proves"
-                }
-              }
+              "ref": "com.atproto.repo.strongRef",
+              "description": "A strong reference to the evidence that supports this impact claim. The record referenced must conform with the org.hypercerts.claim.evaluation lexicon"
             },
             "maxLength": 100
           },
