@@ -12,7 +12,9 @@
         "properties": {
           "title": {
             "type": "string",
-            "description": "The title of this collection"
+            "description": "The title of this collection",
+            "maxLength": 800,
+            "maxGraphemes": 80
           },
           "shortDescription": {
             "type": "string",
