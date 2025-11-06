@@ -88,6 +88,7 @@ dataclass evaluations {
     evaluators[]
     evaluations[]
     summary
+    location
     createdAt
     !endif
 }
@@ -149,6 +150,7 @@ measurements::hypercert --> activity
 evaluations::subject --> evidence
 evaluations::subject --> measurements
 evaluations::subject --> activity
+evaluations::location --> location
 contributions::hypercert --> activity
 collection::claims --> activity
 activity <-- token : tokenizes
