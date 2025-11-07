@@ -41,7 +41,7 @@
             "maxLength": 5000,
             "maxGraphemes": 1000
           },
-          "workTimeframeFrom": {
+          "workTimeFrameFrom": {
             "type": "string",
             "format": "datetime",
             "description": "When the work began"
