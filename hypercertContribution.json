@@ -8,7 +8,7 @@
       "key": "any",
       "record": {
         "type": "object",
-        "required": ["contributors", "role", "createdAt"],
+        "required": ["hypercert", "contributors", "createdAt"],
         "properties": {
           "hypercert": {
             "type": "ref",
@@ -22,10 +22,9 @@
           },
           "contributors": {
             "type": "array",
-            "description": "List of DIDs identifying the contributors. If multiple are stored in the same hypercertContribution, then they would have the exact same role.",
+            "description": "List of the contributors (names, pseudonyms, or DIDs). If multiple contributors are stored in the same hypercertContribution, then they would have the exact same role.",
             "items": {
-              "type": "string",
-              "format": "did"
+              "type": "string"
             }
           },
           "description": {
