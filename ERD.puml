@@ -62,6 +62,7 @@ dataclass activity <<largeBold>> #B4E5D0 {
 
 dataclass evidence {
     !if (SHOW_FIELDS == "true")
+    hypercert
     content
     title
     shortDescription
@@ -147,6 +148,7 @@ activity::evidence --> evidence
 activity::contributions --> contributions
 activity::rights --> rights
 activity::location --> location
+evidence::hypercert --> activity
 measurements::hypercert --> activity
 measurements::location --> location
 evaluations::subject --> evidence
