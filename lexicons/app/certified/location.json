@@ -36,8 +36,8 @@
           "location": {
             "type": "union",
             "refs": [
-              "app.certified.defs#uri",
-              "app.certified.defs#smallBlob"
+              "org.hypercerts.defs#uri",
+              "org.hypercerts.defs#smallBlob"
             ],
             "description": "The location of where the work was performed as a URI or blob."
           },
