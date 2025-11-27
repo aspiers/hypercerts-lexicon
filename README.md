@@ -112,7 +112,7 @@ Hypercerts-specific lexicons for tracking impact work and claims.
 
 ---
 
-### Hypercerts Contributor
+### Hypercerts Contribution
 
 **Lexicon ID:** `org.hypercerts.claim.contribution`
 
