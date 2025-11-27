@@ -22,7 +22,7 @@ const client = new AtpBaseClient({
 })
 
 const hypercert: HypercertClaim = {
-  $type: 'org.hypercerts.claim.impact',
+  $type: 'org.hypercerts.claim.activity',
   title: 'My Impact Work',
   shortDescription: 'Description here',
   workScope: 'Scope of work',
@@ -31,7 +31,7 @@ const hypercert: HypercertClaim = {
   createdAt: new Date().toISOString()
 }
 
-await client.org.hypercerts.claim.impact.create(
+await client.org.hypercerts.claim.activity.create(
   { repo: 'did:plc:example' },
   hypercert
 )
@@ -85,9 +85,9 @@ Certified lexicons are common/shared lexicons that can be used across multiple p
 
 Hypercerts-specific lexicons for tracking impact work and claims.
 
-### Hypercerts Impact Claim
+### Hypercerts Activity Claim
 
-**Lexicon ID:** `org.hypercerts.claim.impact`
+**Lexicon ID:** `org.hypercerts.claim.activity`
 
 **Description:** The main lexicon where everything is connected to. This is the hypercert record that tracks impact work.
 
@@ -124,7 +124,7 @@ Hypercerts-specific lexicons for tracking impact work and claims.
 
 | Property            | Type     | Required | Description                                                                                                                                                             | Comments                                                                          |
 | ------------------- | -------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `hypercert`         | `ref`    | ✅       | A strong reference to the hypercert this contribution is for                                                                                                            | The record referenced must conform with the lexicon `org.hypercerts.claim.impact` |
+| `hypercert`         | `ref`    | ✅       | A strong reference to the hypercert this contribution is for                                                                                                            | The record referenced must conform with the lexicon `org.hypercerts.claim.activity` |
 | `role`              | `string` | ❌       | Role or title of the contributor(s).                                                                                                                                    |                                                                                   |
 | `contributors`      | `array`  | ✅       | List of the contributors (names, pseudonyms, or DIDs). If multiple contributors are stored in the same hypercertContribution, then they would have the exact same role. |                                                                                   |
 | `description`       | `string` | ❌       | What the contribution concretely achieved                                                                                                                               |                                                                                   |
@@ -186,7 +186,7 @@ Hypercerts-specific lexicons for tracking impact work and claims.
 
 | Property               | Type     | Required | Description                                                                   | Comments                                                                          |
 | ---------------------- | -------- | -------- | ----------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `hypercert`            | `ref`    | ✅       | A strong reference to the hypercert that this measurement is for              | The record referenced must conform with the lexicon `org.hypercerts.claim.impact` |
+| `hypercert`            | `ref`    | ✅       | A strong reference to the hypercert that this measurement is for              | The record referenced must conform with the lexicon `org.hypercerts.claim.activity` |
 | `measurers`            | `array`  | ✅       | DIDs of the entity (or entities) that measured this data                      |                                                                                   |
 | `metric`               | `string` | ✅       | The metric being measured                                                     |                                                                                   |
 | `value`                | `string` | ✅       | The measured value                                                            |                                                                                   |
@@ -220,7 +220,7 @@ Hypercerts-specific lexicons for tracking impact work and claims.
 
 | Property | Type     | Required | Description                                                                                                                                                                                  | Comments |
 | -------- | -------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| `claim`  | `ref`    | ✅       | A strong reference to a hypercert claim record. This claim must conform to the lexicon org.hypercerts.claim.impact                                                                           |          |
+| `claim`  | `ref`    | ✅       | A strong reference to a hypercert claim record. This claim must conform to the lexicon org.hypercerts.claim.activity                                                                           |          |
 | `weight` | `string` | ✅       | The weight/importance of this hypercert claim in the collection (a percentage from 0-100, stored as a string to avoid float precision issues). The total claim weights should add up to 100. |          |
 
 ---
