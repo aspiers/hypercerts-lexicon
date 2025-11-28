@@ -152,8 +152,8 @@ evaluations::subject --> activity
 contributions::hypercert --> activity
 collection::claims --> activity
 activity <-- token : tokenizes
-contributor --> contributions : make
-contributor --> rights : have
+contributor --> contributions : makes
+contributor --> rights : has
 
 @enduml
 
