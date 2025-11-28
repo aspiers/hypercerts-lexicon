@@ -78,6 +78,7 @@ dataclass measurements {
     value
     measurementMethodURI
     evidenceURI[]
+    location
     createdAt
     !endif
 }
@@ -147,6 +148,7 @@ activity::contributions --> contributions
 activity::rights --> rights
 activity::location --> location
 measurements::hypercert --> activity
+measurements::location --> location
 evaluations::subject --> evidence
 evaluations::subject --> measurements
 evaluations::subject --> activity

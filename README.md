@@ -193,6 +193,7 @@ Hypercerts-specific lexicons for tracking impact work and claims.
 | `value`                | `string` | ✅       | The measured value                                                            |                                                                                   |
 | `measurementMethodURI` | `string` | ❌       | URI to methodology documentation, standard protocol, or measurement procedure |                                                                                   |
 | `evidenceURI`          | `array`  | ❌       | URIs to supporting evidence or data                                           |                                                                                   |
+| `location`             | `ref`    | ❌       | A strong reference to the location where the measurement was taken            | References must conform to `app.certified.location`                               |
 | `createdAt`            | `string` | ✅       | Client-declared timestamp when this record was originally created             |                                                                                   |
 
 ---
