@@ -36,6 +36,7 @@ dataclass evaluations
 dataclass contributions
 dataclass location
 dataclass rights
+dataclass collection
 dataclass "evidence review" as review_evidence #FFFACD
 dataclass "measurement review" as review_measurement #FFFACD
 dataclass "evaluation review" as review_evaluation #FFFACD
@@ -53,6 +54,8 @@ claim <-- token : tokenizes
 contributors --> contributions : make
 contributors --> rights : have
 contributions --> claim : contributes to
+claim --> location : located at
+collection --> claim : groups
 review_evidence --> evidence : evaluates
 review_measurement --> measurements : evaluates
 review_evaluation --> evaluations : evaluates
