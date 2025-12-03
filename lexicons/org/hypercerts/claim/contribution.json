@@ -8,13 +8,8 @@
       "key": "any",
       "record": {
         "type": "object",
-        "required": ["hypercert", "contributors", "createdAt"],
+        "required": ["contributors", "createdAt"],
         "properties": {
-          "hypercert": {
-            "type": "ref",
-            "ref": "com.atproto.repo.strongRef",
-            "description": "A strong reference to the hypercert this contribution is for. The record referenced must conform with the lexicon org.hypercerts.claim.activity"
-          },
           "role": {
             "type": "string",
             "description": "Role or title of the contributor(s).",

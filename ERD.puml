@@ -155,7 +155,6 @@ evaluations::subject --> evidence
 evaluations::subject --> measurements
 evaluations::subject --> activity
 evaluations::location --> location
-contributions::hypercert --> activity
 collection::claims --> activity
 activity <-- token : tokenizes
 contributor --> contributions : makes
