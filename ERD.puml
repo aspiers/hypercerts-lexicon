@@ -49,7 +49,7 @@ dataclass activity <<largeBold>> #B4E5D0 {
     shortDescription
     description?
     image?
-    workScope
+    workScope?
     startDate
     endDate
     contributions[]?

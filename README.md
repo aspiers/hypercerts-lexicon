@@ -112,7 +112,7 @@ Hypercerts-specific lexicons for tracking impact work and claims.
 | `shortDescription`  | `string` | ✅       | Short blurb of the impact work done.                                                |                                                                   |
 | `description`       | `string` | ❌       | Optional longer description of the impact work done.                                |                                                                   |
 | `image`             | `union`  | ❌       | The hypercert visual representation as a URI or image blob                          |                                                                   |
-| `workScope`         | `string` | ✅       | Scope of the work performed                                                         |                                                                   |
+| `workScope`         | `object` | ❌       | Logical scope of the work using label-based conditions                               | Object with `allOf`, `anyOf`, `noneOf` arrays of labels           |
 | `startDate`         | `string` | ✅       | When the work began                                                                 |                                                                   |
 | `endDate`           | `string` | ✅       | When the work ended                                                                 |                                                                   |
 | `contributions`     | `array`  | ❌       | A strong reference to the contributions done to create the impact in the hypercerts | References must conform to `org.hypercerts.claim.contribution`    |

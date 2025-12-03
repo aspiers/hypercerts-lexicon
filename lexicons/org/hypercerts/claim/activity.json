@@ -12,7 +12,6 @@
           "title",
           "shortDescription",
           "createdAt",
-          "workScope",
           "startDate",
           "endDate"
         ],
@@ -43,10 +42,8 @@
             "description": "The hypercert visual representation as a URI or image blob"
           },
           "workScope": {
-            "type": "string",
-            "description": "Scope of the work performed",
-            "maxLength": 5000,
-            "maxGraphemes": 1000
+            "type": "ref",
+            "ref": "#workScope"
           },
           "startDate": {
             "type": "string",
@@ -81,6 +78,36 @@
             "format": "datetime",
             "description": "Client-declared timestamp when this record was originally created"
           }
+        }
+      }
+    },
+    "workScope": {
+      "type": "object",
+      "description": "Logical scope of the work using label-based conditions. All labels in `allOf` must apply; at least one label in `anyOf` must apply if provided; no label in `noneOf` may apply.",
+      "properties": {
+        "allOf": {
+          "type": "array",
+          "description": "Labels that MUST all hold for the scope to apply.",
+          "items": {
+            "type": "string"
+          },
+          "maxLength": 100
+        },
+        "anyOf": {
+          "type": "array",
+          "description": "Labels of which AT LEAST ONE must hold (optional). If omitted or empty, imposes no additional condition.",
+          "items": {
+            "type": "string"
+          },
+          "maxLength": 100
+        },
+        "noneOf": {
+          "type": "array",
+          "description": "Labels that MUST NOT hold for the scope to apply.",
+          "items": {
+            "type": "string"
+          },
+          "maxLength": 100
         }
       }
     }
