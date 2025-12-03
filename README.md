@@ -202,6 +202,7 @@ Hypercerts-specific lexicons for tracking impact work and claims.
 | `measurers`            | `array`  | ✅       | DIDs of the entity (or entities) that measured this data                      |                                                                                   |
 | `metric`               | `string` | ✅       | The metric being measured                                                     |                                                                                   |
 | `value`                | `string` | ✅       | The measured value                                                            |                                                                                   |
+| `measurementMethodType`| `string` | ❌       | Short identifier for the measurement methodology                               |                                                                                   |
 | `measurementMethodURI` | `string` | ❌       | URI to methodology documentation, standard protocol, or measurement procedure |                                                                                   |
 | `evidenceURI`          | `array`  | ❌       | URIs to supporting evidence or data                                           |                                                                                   |
 | `location`             | `ref`    | ❌       | A strong reference to the location where the measurement was taken            | References must conform to `app.certified.location`                               |
