@@ -50,8 +50,8 @@ dataclass activity <<largeBold>> #B4E5D0 {
     description?
     image?
     workScope
-    workTimeFrameFrom
-    workTimeFrameTo
+    startDate
+    endDate
     evidence[]?
     contributions[]?
     rights?

@@ -37,8 +37,8 @@ const hypercert: HypercertClaim = {
   title: 'My Impact Work',
   shortDescription: 'Description here',
   workScope: 'Scope of work',
-  workTimeFrameFrom: '2023-01-01T00:00:00Z',
-  workTimeFrameTo: '2023-12-31T23:59:59Z',
+  startDate: '2023-01-01T00:00:00Z',
+  endDate: '2023-12-31T23:59:59Z',
   createdAt: new Date().toISOString()
 }
 
@@ -113,8 +113,8 @@ Hypercerts-specific lexicons for tracking impact work and claims.
 | `description`       | `string` | ❌       | Optional longer description of the impact work done.                                |                                                                   |
 | `image`             | `union`  | ❌       | The hypercert visual representation as a URI or image blob                          |                                                                   |
 | `workScope`         | `string` | ✅       | Scope of the work performed                                                         |                                                                   |
-| `workTimeFrameFrom` | `string` | ✅       | When the work began                                                                 |                                                                   |
-| `workTimeFrameTo`   | `string` | ✅       | When the work ended                                                                 |                                                                   |
+| `startDate`         | `string` | ✅       | When the work began                                                                 |                                                                   |
+| `endDate`           | `string` | ✅       | When the work ended                                                                 |                                                                   |
 | `evidence`          | `array`  | ❌       | Supporting evidence, documentation, or external data URIs                           | References must conform to `org.hypercerts.claim.evidence`        |
 | `contributions`     | `array`  | ❌       | A strong reference to the contributions done to create the impact in the hypercerts | References must conform to `org.hypercerts.claim.contribution`    |
 | `rights`            | `ref`    | ❌       | A strong reference to the rights that this hypercert has                            | References must conform to `org.hypercerts.claim.rights`          |

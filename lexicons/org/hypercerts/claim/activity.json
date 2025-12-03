@@ -13,8 +13,8 @@
           "shortDescription",
           "createdAt",
           "workScope",
-          "workTimeFrameFrom",
-          "workTimeFrameTo"
+          "startDate",
+          "endDate"
         ],
         "properties": {
           "title": {
@@ -48,12 +48,12 @@
             "maxLength": 5000,
             "maxGraphemes": 1000
           },
-          "workTimeFrameFrom": {
+          "startDate": {
             "type": "string",
             "format": "datetime",
             "description": "When the work began"
           },
-          "workTimeFrameTo": {
+          "endDate": {
             "type": "string",
             "format": "datetime",
             "description": "When the work ended"
