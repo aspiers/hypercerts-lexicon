@@ -4,7 +4,7 @@
   "defs": {
     "main": {
       "type": "record",
-      "description": "Describes the rights that a user has with a hypercert, such as whether it can be sold, transferred, and under what conditions.",
+      "description": "Describes the rights that an owner has with a hypercert, such as whether it can be sold, transferred, and under what conditions.",
       "key": "any",
       "record": {
         "type": "object",
