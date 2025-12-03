@@ -33,12 +33,12 @@
             "maxLength": 2000,
             "maxGraphemes": 500
           },
-          "workTimeframeFrom": {
+          "startDate": {
             "type": "string",
             "format": "datetime",
             "description": "When this contribution started. This should be a subset of the hypercert timeframe."
           },
-          "workTimeframeTo": {
+          "endDate": {
             "type": "string",
             "format": "datetime",
             "description": "When this contribution finished.  This should be a subset of the hypercert timeframe."

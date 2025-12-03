@@ -100,8 +100,8 @@ dataclass contributions {
     role?
     contributor[]
     description?
-    workTimeframeFrom?
-    workTimeframeTo?
+    startDate
+    endDate
     createdAt
     !endif
 }
