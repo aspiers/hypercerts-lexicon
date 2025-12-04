@@ -52,7 +52,6 @@ dataclass activity <<largeBold>> #B4E5D0 {
     workScope
     startDate
     endDate
-    evidence[]?
     contributions[]?
     rights?
     location?
@@ -144,7 +143,6 @@ protocol token <<largeBold>> #FFB6C1 {
     !endif
 }
 
-activity::evidence --> evidence
 activity::contributions --> contributions
 activity::rights --> rights
 activity::location --> location

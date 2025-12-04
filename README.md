@@ -115,7 +115,6 @@ Hypercerts-specific lexicons for tracking impact work and claims.
 | `workScope`         | `string` | ✅       | Scope of the work performed                                                         |                                                                   |
 | `startDate`         | `string` | ✅       | When the work began                                                                 |                                                                   |
 | `endDate`           | `string` | ✅       | When the work ended                                                                 |                                                                   |
-| `evidence`          | `array`  | ❌       | Supporting evidence, documentation, or external data URIs                           | References must conform to `org.hypercerts.claim.evidence`        |
 | `contributions`     | `array`  | ❌       | A strong reference to the contributions done to create the impact in the hypercerts | References must conform to `org.hypercerts.claim.contribution`    |
 | `rights`            | `ref`    | ❌       | A strong reference to the rights that this hypercert has                            | References must conform to `org.hypercerts.claim.rights`          |
 | `location`          | `ref`    | ❌       | A strong reference to the location where the work for done hypercert was located    | References must conform to `app.certified.location`               |
