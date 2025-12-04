@@ -87,9 +87,10 @@ dataclass measurements {
 dataclass evaluations {
     !if (SHOW_FIELDS == "true")
     subject
-    evaluators[]
-    evaluations[]?
     summary
+    evaluators[]
+    evidence[]?
+    measurements[]?
     location?
     createdAt
     !endif
@@ -151,8 +152,8 @@ activity::location --> location
 evidence::hypercert --> activity
 measurements::hypercert --> activity
 measurements::location --> location
-evaluations::subject --> evidence
-evaluations::subject --> measurements
+evaluations::evidence --> evidence
+evaluations::measurements --> measurements
 evaluations::subject --> activity
 evaluations::location --> location
 collection::claims --> activity
