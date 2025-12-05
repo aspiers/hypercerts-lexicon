@@ -53,8 +53,8 @@ dataclass activity <<largeBold>> #B4E5D0 {
     startDate
     endDate
     contributions[]?
-    rights?
     location?
+    rights?
     createdAt
     !endif
 }
@@ -90,8 +90,8 @@ dataclass evaluation {
     summary
     evaluators[]
     evidence[]?
-    measurements[]?
     location?
+    measurements[]?
     createdAt
     !endif
 }
@@ -145,7 +145,7 @@ protocol token <<largeBold>> #FFB6C1 {
     !endif
 }
 
-activity::contributions --> contribution
+activity::contributions -l-> contribution
 activity::rights --> rights
 activity::location --> location
 evidence::activity --> activity
@@ -155,10 +155,10 @@ evaluation::evidence --> evidence
 evaluation::measurements --> measurement
 evaluation::subject --> activity
 evaluation::location --> location
-collection::claims --> activity
-activity <-- token : tokenizes
-contributor --> contribution : makes
-contributor --> rights : has
+collection::claims -d-> activity
+token -l-> activity : tokenizes
+contribution::contributors --> contributor : made by
+contributor -r-> rights : has
 
 @enduml
 
