@@ -98,7 +98,6 @@ dataclass evaluations {
 
 dataclass contributions {
     !if (SHOW_FIELDS == "true")
-    hypercert
     role?
     contributor[]
     description?
