@@ -209,9 +209,9 @@ Hypercerts-specific lexicons for tracking impact work and claims.
 
 ---
 
-### org.hypercerts.collection
+### org.hypercerts.claim.collection
 
-**Lexicon ID:** `org.hypercerts.collection`
+**Lexicon ID:** `org.hypercerts.claim.collection`
 
 **Description:** A collection/group of hypercerts that have a specific property.
 
