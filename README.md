@@ -60,13 +60,13 @@ Certified lexicons are common/shared lexicons that can be used across multiple p
 
 #### Defs
 
-| Def          | Type     | Description                        | Comments |
-| ------------ | -------- | ---------------------------------- | -------- |
-| `uri`        | `string` | URI to external data               |          |
-| `smallBlob`  | `blob`   | Data stored in a PDS (up to 10MB)  |          |
-| `largeBlob`  | `blob`   | Data stored in a PDS (up to 100MB) |          |
-| `smallImage` | `blob`   | Image stored in a PDS (up to 5MB)  |          |
-| `largeImage` | `blob`   | Image stored in a PDS (up to 10MB) |          |
+| Def          | Type     | Description                               | Comments                                |
+|--------------|----------|-------------------------------------------|-----------------------------------------|
+| `uri`        | `object` | Object containing a URI to external data  | Has `uri` property (string, format uri) |
+| `smallBlob`  | `object` | Object containing a blob to external data | Has `blob` property (blob, up to 10MB)  |
+| `largeBlob`  | `object` | Object containing a blob to external data | Has `blob` property (blob, up to 100MB) |
+| `smallImage` | `object` | Object containing a small image           | Has `image` property (blob, up to 5MB)  |
+| `largeImage` | `object` | Object containing a large image           | Has `image` property (blob, up to 10MB) |
 
 ---
 
