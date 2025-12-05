@@ -176,7 +176,7 @@ Hypercerts-specific lexicons for tracking impact work and claims.
 
 | Property           | Type     | Required | Description                                                                | Comments                                                                          |
 | ------------------ | -------- | -------- | -------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `hypercert`        | `ref`    | ❌       | A strong reference to the hypercert this evidence is for                   | The record referenced must conform with the lexicon `org.hypercerts.claim.activity` |
+| `activity`         | `ref`    | ❌       | A strong reference to the activity this evidence is for                    | The record referenced must conform with the lexicon `org.hypercerts.claim.activity` |
 | `content`          | `union`  | ✅       | A piece of evidence (URI or blobs) supporting a hypercert claim            |                                                                                   |
 | `title`            | `string` | ✅       | Title to describe the nature of the evidence                                |                                                                                   |
 | `shortDescription` | `string` | ❌       | Short description explaining what this evidence demonstrates or proves     |                                                                                   |
@@ -197,7 +197,7 @@ Hypercerts-specific lexicons for tracking impact work and claims.
 
 | Property               | Type     | Required | Description                                                                   | Comments                                                                          |
 | ---------------------- | -------- | -------- | ----------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `hypercert`            | `ref`    | ✅       | A strong reference to the hypercert that this measurement is for              | The record referenced must conform with the lexicon `org.hypercerts.claim.activity` |
+| `activity`             | `ref`    | ✅       | A strong reference to the activity that this measurement is for             | The record referenced must conform with the lexicon `org.hypercerts.claim.activity` |
 | `measurers`            | `array`  | ✅       | DIDs of the entity (or entities) that measured this data                      |                                                                                   |
 | `metric`               | `string` | ✅       | The metric being measured                                                     |                                                                                   |
 | `value`                | `string` | ✅       | The measured value                                                            |                                                                                   |

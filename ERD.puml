@@ -61,7 +61,7 @@ dataclass activity <<largeBold>> #B4E5D0 {
 
 dataclass evidence {
     !if (SHOW_FIELDS == "true")
-    hypercert?
+    activity?
     content
     title
     shortDescription?
@@ -72,7 +72,7 @@ dataclass evidence {
 
 dataclass measurements {
     !if (SHOW_FIELDS == "true")
-    hypercert
+    activity
     measurers[]
     metric
     value
@@ -149,8 +149,8 @@ protocol token <<largeBold>> #FFB6C1 {
 activity::contributions --> contributions
 activity::rights --> rights
 activity::location --> location
-evidence::hypercert --> activity
-measurements::hypercert --> activity
+evidence::activity --> activity
+measurements::activity --> activity
 measurements::location --> location
 evaluations::evidence --> evidence
 evaluations::measurements --> measurements
