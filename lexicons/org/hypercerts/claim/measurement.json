@@ -34,6 +34,11 @@
             "description": "The measured value",
             "maxLength": 500
           },
+          "measurementMethodType": {
+            "type": "string",
+            "description": "Short identifier for the measurement methodology",
+            "maxLength": 30
+          },
           "measurementMethodURI": {
             "type": "string",
             "format": "uri",

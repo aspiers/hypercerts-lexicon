@@ -37,8 +37,8 @@ const hypercert: HypercertClaim = {
   title: 'My Impact Work',
   shortDescription: 'Description here',
   workScope: 'Scope of work',
-  workTimeFrameFrom: '2023-01-01T00:00:00Z',
-  workTimeFrameTo: '2023-12-31T23:59:59Z',
+  startDate: '2023-01-01T00:00:00Z',
+  endDate: '2023-12-31T23:59:59Z',
   createdAt: new Date().toISOString()
 }
 
@@ -60,13 +60,13 @@ Certified lexicons are common/shared lexicons that can be used across multiple p
 
 #### Defs
 
-| Def          | Type     | Description                        | Comments |
-| ------------ | -------- | ---------------------------------- | -------- |
-| `uri`        | `string` | URI to external data               |          |
-| `smallBlob`  | `blob`   | Data stored in a PDS (up to 10MB)  |          |
-| `largeBlob`  | `blob`   | Data stored in a PDS (up to 100MB) |          |
-| `smallImage` | `blob`   | Image stored in a PDS (up to 5MB)  |          |
-| `largeImage` | `blob`   | Image stored in a PDS (up to 10MB) |          |
+| Def          | Type     | Description                               | Comments                                |
+|--------------|----------|-------------------------------------------|-----------------------------------------|
+| `uri`        | `object` | Object containing a URI to external data  | Has `uri` property (string, format uri) |
+| `smallBlob`  | `object` | Object containing a blob to external data | Has `blob` property (blob, up to 10MB)  |
+| `largeBlob`  | `object` | Object containing a blob to external data | Has `blob` property (blob, up to 100MB) |
+| `smallImage` | `object` | Object containing a small image           | Has `image` property (blob, up to 5MB)  |
+| `largeImage` | `object` | Object containing a large image           | Has `image` property (blob, up to 10MB) |
 
 ---
 
@@ -112,10 +112,9 @@ Hypercerts-specific lexicons for tracking impact work and claims.
 | `shortDescription`  | `string` | ✅       | Short blurb of the impact work done.                                                |                                                                   |
 | `description`       | `string` | ❌       | Optional longer description of the impact work done.                                |                                                                   |
 | `image`             | `union`  | ❌       | The hypercert visual representation as a URI or image blob                          |                                                                   |
-| `workScope`         | `string` | ✅       | Scope of the work performed                                                         |                                                                   |
-| `workTimeFrameFrom` | `string` | ✅       | When the work began                                                                 |                                                                   |
-| `workTimeFrameTo`   | `string` | ✅       | When the work ended                                                                 |                                                                   |
-| `evidence`          | `array`  | ❌       | Supporting evidence, documentation, or external data URIs                           | References must conform to `org.hypercerts.claim.evidence`        |
+| `workScope`         | `object` | ❌       | Logical scope of the work using label-based conditions                               | Object with `allOf`, `anyOf`, `noneOf` arrays of labels           |
+| `startDate`         | `string` | ✅       | When the work began                                                                 |                                                                   |
+| `endDate`           | `string` | ✅       | When the work ended                                                                 |                                                                   |
 | `contributions`     | `array`  | ❌       | A strong reference to the contributions done to create the impact in the hypercerts | References must conform to `org.hypercerts.claim.contribution`    |
 | `rights`            | `ref`    | ❌       | A strong reference to the rights that this hypercert has                            | References must conform to `org.hypercerts.claim.rights`          |
 | `location`          | `ref`    | ❌       | A strong reference to the location where the work for done hypercert was located    | References must conform to `app.certified.location`               |
@@ -135,12 +134,11 @@ Hypercerts-specific lexicons for tracking impact work and claims.
 
 | Property            | Type     | Required | Description                                                                                                                                                             | Comments                                                                          |
 | ------------------- | -------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `hypercert`         | `ref`    | ✅       | A strong reference to the hypercert this contribution is for                                                                                                            | The record referenced must conform with the lexicon `org.hypercerts.claim.activity` |
 | `role`              | `string` | ❌       | Role or title of the contributor(s).                                                                                                                                    |                                                                                   |
 | `contributors`      | `array`  | ✅       | List of the contributors (names, pseudonyms, or DIDs). If multiple contributors are stored in the same hypercertContribution, then they would have the exact same role. |                                                                                   |
 | `description`       | `string` | ❌       | What the contribution concretely achieved                                                                                                                               |                                                                                   |
-| `workTimeframeFrom` | `string` | ❌       | When this contribution started. This should be a subset of the hypercert timeframe.                                                                                     |                                                                                   |
-| `workTimeframeTo`   | `string` | ❌       | When this contribution finished. This should be a subset of the hypercert timeframe.                                                                                    |                                                                                   |
+| `startDate`         | `string` | ❌       | When this contribution started. This should be a subset of the hypercert timeframe.                                                                                     |                                                                                   |
+| `endDate`           | `string` | ❌       | When this contribution finished. This should be a subset of the hypercert timeframe.                                                                                    |                                                                                   |
 | `createdAt`         | `string` | ✅       | Client-declared timestamp when this record was originally created                                                                                                       |                                                                                   |
 
 ---
@@ -180,8 +178,8 @@ Hypercerts-specific lexicons for tracking impact work and claims.
 | ------------------ | -------- | -------- | -------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
 | `hypercert`        | `ref`    | ❌       | A strong reference to the hypercert this evidence is for                   | The record referenced must conform with the lexicon `org.hypercerts.claim.activity` |
 | `content`          | `union`  | ✅       | A piece of evidence (URI or blobs) supporting a hypercert claim            |                                                                                   |
-| `title`            | `string` | ❌       | Optional title to describe the nature of the evidence                      |                                                                                   |
-| `shortDescription` | `string` | ✅       | Short description explaining what this evidence demonstrates or proves     |                                                                                   |
+| `title`            | `string` | ✅       | Title to describe the nature of the evidence                                |                                                                                   |
+| `shortDescription` | `string` | ❌       | Short description explaining what this evidence demonstrates or proves     |                                                                                   |
 | `description`      | `string` | ❌       | Optional longer description describing the impact claim evidence.          |                                                                                   |
 | `createdAt`        | `string` | ✅       | Client-declared timestamp when this hypercert claim was originally created |                                                                                   |
 
@@ -203,6 +201,7 @@ Hypercerts-specific lexicons for tracking impact work and claims.
 | `measurers`            | `array`  | ✅       | DIDs of the entity (or entities) that measured this data                      |                                                                                   |
 | `metric`               | `string` | ✅       | The metric being measured                                                     |                                                                                   |
 | `value`                | `string` | ✅       | The measured value                                                            |                                                                                   |
+| `measurementMethodType`| `string` | ❌       | Short identifier for the measurement methodology                               |                                                                                   |
 | `measurementMethodURI` | `string` | ❌       | URI to methodology documentation, standard protocol, or measurement procedure |                                                                                   |
 | `evidenceURI`          | `array`  | ❌       | URIs to supporting evidence or data                                           |                                                                                   |
 | `location`             | `ref`    | ❌       | A strong reference to the location where the measurement was taken            | References must conform to `app.certified.location`                               |
@@ -210,9 +209,9 @@ Hypercerts-specific lexicons for tracking impact work and claims.
 
 ---
 
-### org.hypercerts.collection
+### org.hypercerts.claim.collection
 
-**Lexicon ID:** `org.hypercerts.collection`
+**Lexicon ID:** `org.hypercerts.claim.collection`
 
 **Description:** A collection/group of hypercerts that have a specific property.
 
@@ -254,6 +253,7 @@ Hypercerts-specific lexicons for tracking impact work and claims.
 | `rightsName`        | `string` | ✅       | Full name of the rights                                           |          |
 | `rightsType`        | `string` | ✅       | Short rights identifier for easier search                         |          |
 | `rightsDescription` | `string` | ✅       | Description of the rights of this hypercert                       |          |
+| `attachment`        | `union`  | ❌       | An attachment to define the rights further, e.g. a legal document | URI or blob |
 | `createdAt`         | `string` | ✅       | Client-declared timestamp when this record was originally created |          |
 
 ---

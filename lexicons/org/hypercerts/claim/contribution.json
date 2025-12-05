@@ -8,13 +8,8 @@
       "key": "any",
       "record": {
         "type": "object",
-        "required": ["hypercert", "contributors", "createdAt"],
+        "required": ["contributors", "createdAt"],
         "properties": {
-          "hypercert": {
-            "type": "ref",
-            "ref": "com.atproto.repo.strongRef",
-            "description": "A strong reference to the hypercert this contribution is for. The record referenced must conform with the lexicon org.hypercerts.claim.activity"
-          },
           "role": {
             "type": "string",
             "description": "Role or title of the contributor(s).",
@@ -33,12 +28,12 @@
             "maxLength": 2000,
             "maxGraphemes": 500
           },
-          "workTimeframeFrom": {
+          "startDate": {
             "type": "string",
             "format": "datetime",
             "description": "When this contribution started. This should be a subset of the hypercert timeframe."
           },
-          "workTimeframeTo": {
+          "endDate": {
             "type": "string",
             "format": "datetime",
             "description": "When this contribution finished.  This should be a subset of the hypercert timeframe."

@@ -4,7 +4,7 @@
   "defs": {
     "main": {
       "type": "record",
-      "description": "Describes the rights that a user has with a hypercert, such as whether it can be sold, transferred, and under what conditions.",
+      "description": "Describes the rights that a contributor and/or an owner has, such as whether the hypercert can be sold, transferred, and under what conditions.",
       "key": "any",
       "record": {
         "type": "object",
@@ -23,6 +23,14 @@
           "rightsDescription": {
             "type": "string",
             "description": "Description of the rights of this hypercert"
+          },
+          "attachment": {
+            "type": "union",
+            "refs": [
+              "org.hypercerts.defs#uri",
+              "org.hypercerts.defs#smallBlob"
+            ],
+            "description": "An attachment to define the rights further, e.g. a legal document."
           },
           "createdAt": {
             "type": "string",
