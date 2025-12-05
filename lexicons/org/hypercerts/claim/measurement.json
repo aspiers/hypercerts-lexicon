@@ -8,12 +8,12 @@
       "key": "tid",
       "record": {
         "type": "object",
-        "required": ["hypercert", "measurers", "metric", "value", "createdAt"],
+        "required": ["activity", "measurers", "metric", "value", "createdAt"],
         "properties": {
-          "hypercert": {
+          "activity": {
             "type": "ref",
             "ref": "com.atproto.repo.strongRef",
-            "description": "A strong reference to the hypercert that this measurement is for. The record referenced must conform with the lexicon org.hypercerts.claim.activity"
+            "description": "A strong reference to the activity that this measurement is for. The record referenced must conform with the lexicon org.hypercerts.claim.activity"
           },
           "measurers": {
             "type": "array",

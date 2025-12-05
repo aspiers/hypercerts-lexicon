@@ -53,15 +53,15 @@ dataclass activity <<largeBold>> #B4E5D0 {
     startDate
     endDate
     contributions[]?
-    rights?
     location?
+    rights?
     createdAt
     !endif
 }
 
 dataclass evidence {
     !if (SHOW_FIELDS == "true")
-    hypercert?
+    activity?
     content
     title
     shortDescription?
@@ -70,9 +70,9 @@ dataclass evidence {
     !endif
 }
 
-dataclass measurements {
+dataclass measurement {
     !if (SHOW_FIELDS == "true")
-    hypercert
+    activity
     measurers[]
     metric
     value
@@ -84,23 +84,22 @@ dataclass measurements {
     !endif
 }
 
-dataclass evaluations {
+dataclass evaluation {
     !if (SHOW_FIELDS == "true")
     subject
     summary
     evaluators[]
     evidence[]?
-    measurements[]?
     location?
+    measurements[]?
     createdAt
     !endif
 }
 
-dataclass contributions {
+dataclass contribution {
     !if (SHOW_FIELDS == "true")
-    hypercert
     role?
-    contributor[]
+    contributors[]
     description?
     startDate
     endDate
@@ -146,20 +145,20 @@ protocol token <<largeBold>> #FFB6C1 {
     !endif
 }
 
-activity::contributions --> contributions
+activity::contributions -l-> contribution
 activity::rights --> rights
 activity::location --> location
-evidence::hypercert --> activity
-measurements::hypercert --> activity
-measurements::location --> location
-evaluations::evidence --> evidence
-evaluations::measurements --> measurements
-evaluations::subject --> activity
-evaluations::location --> location
-collection::claims --> activity
-activity <-- token : tokenizes
-contributor --> contributions : makes
-contributor --> rights : has
+evidence::activity --> activity
+measurement::activity --> activity
+measurement::location --> location
+evaluation::evidence --> evidence
+evaluation::measurements --> measurement
+evaluation::subject --> activity
+evaluation::location --> location
+collection::claims -d-> activity
+token -l-> activity : tokenizes
+contribution::contributors --> contributor : made by
+contributor -r-> rights : has
 
 @enduml
 
