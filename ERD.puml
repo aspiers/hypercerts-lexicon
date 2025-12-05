@@ -96,7 +96,7 @@ dataclass evaluations {
     !endif
 }
 
-dataclass contributions {
+dataclass contribution {
     !if (SHOW_FIELDS == "true")
     role?
     contributor[]
