@@ -1,3 +1,6 @@
 # Custom merge driver for auto-generated files
 # When SCHEMAS.md has conflicts, regenerate it and use the result
 SCHEMAS.md merge=schemas
+
+# Use bd merge for beads JSONL files
+.beads/issues.jsonl merge=beads
